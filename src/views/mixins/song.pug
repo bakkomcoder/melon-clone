@@ -1,0 +1,5 @@
+mixin song(song)
+    a(href=`/songs/${song.id}`)
+        span=song.title
+        div 
+            span #{song.meta.views}회

@@ -1,8 +1,12 @@
 import express from "express";
-import { home } from "../controllers/songController";
+import { home, search } from "../controllers/songController";
+import { join, login } from "../controllers/userController";
 
 const rootRouter = express.Router();
 
 rootRouter.get("/", home);
+rootRouter.get("/join", join);
+rootRouter.get("/login", login);
+rootRouter.get("/search", search);
 
 export default rootRouter;
