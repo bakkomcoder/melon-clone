@@ -1,0 +1,26 @@
+[
+  {
+    "title": "I AM",
+    "artist": "IVE (아이브)",
+    "albumTitle": "I've IVE",
+    "albumImg": "https://image.bugsm.co.kr/album/images/200/40849/4084947.jpg?version=20230414004012.0",
+    "src": "",
+    "meta": { "play": 150, "likes": 100 }
+  },
+  {
+    "title": "사건의 지평선",
+    "artist": "윤하 (YOUNHA)",
+    "albumTitle": "YOUNHA 6th Album Repackage 'END THEORY : Final Edition'",
+    "albumImg": "https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202211/09/nocut/20221109111216376ydod.jpg",
+    "src": "",
+    "meta": { "play": 70, "likes": 20 }
+  },
+  {
+    "title": "Ditto",
+    "artist": "NewJeans",
+    "albumTitle": "New Jeans 'OMG'",
+    "albumImg": "https://i.namu.wiki/i/otRh7ESG3eFj--7f5vWl3uxwXFfgKJH47kcZqP4YX_i6w9Yq_bNTDuFBbolOPhTiEAwwKOpXSJ8_xy-BH3P4asYjBPy2wKGvlxp0IAeyczXFZCt_OoZW4V53fPnnmAjpZwHahEJbrCZ_UkOZJJquCA.jpg",
+    "src": "",
+    "meta": { "play": 20, "likes": 70 }
+  }
+]

@@ -1,22 +1,36 @@
 import mongoose from "mongoose";
+import fs from "fs/promises"; // fs(file system).promise API : 다른 비동기 파일 시스템 제공
 
 const songSchema = new mongoose.Schema({
-  title: { type: String, required: true, trim: true, maxlength: 80 },
-  description: { type: String, required: true, trim: true, minlength: 20 },
-  createdAt: { type: Date, required: true, default: Date.now },
-  hashtags: [{ type: String, trim: true }],
+  title: { type: String, required: true, maxlength: 80 },
+  artist: { type: String, required: true },
+  albumTitle: { type: String, required: true },
+  albumImg: { type: String },
+  src: { type: String },
   meta: {
-    views: { type: Number, default: 1, required: true },
-    rating: { type: Number, default: 0, required: true },
+    play: { type: Number, required: true },
+    likes: { type: Number, required: true },
   },
 });
 
-songSchema.static("formatHashtags", function (hashtags) {
-  return hashtags
-    .split(",")
-    .map((word) => (word.startsWith("#") ? word : `#${word}`));
-});
-
 const Song = mongoose.model("Song", songSchema);
+
+const dataFilePath = "src/models/data/Song.json";
+async function saveData() {
+  const data = JSON.parse(await fs.readFile(dataFilePath));
+  data.map((i) => {
+    Song.create(i, (error) =>
+      error ? console.log(error) : console.log("Data inserted successfully")
+    );
+  });
+}
+
+async function deleteData() {
+  Song.deleteMany({}, (err) =>
+    err ? console.log(err) : console.log("Data cleared successfully!")
+  );
+}
+
+// saveData();
 
 export default Song;

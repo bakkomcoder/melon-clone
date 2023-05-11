@@ -3,7 +3,15 @@ include mixins/song
 
 block content
     div
-        each song in songs 
-            +song(song)
-        else 
-            span No Songs found
+        span TOP 10
+    each song, index in songsTop10 
+        ul 
+            li 
+                span=index+1
+                img(src=song.albumImg).albumImg
+                div 
+                    span=song.title 
+                    span  / 
+                    span=song.artist
+                    span  / 
+                    span #{song.meta.play} Plays
