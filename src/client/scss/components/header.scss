@@ -1,0 +1,51 @@
+header {
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header__left {
+    display: flex;
+    align-items: center;
+    .header-logo {
+      font-family: "Kalam", cursive;
+      font-size: 30px;
+      margin-right: 20px;
+    }
+    .search__form {
+      margin-left: 15px;
+      position: relative;
+      input {
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        color: white;
+        width: 200px;
+        height: 20px;
+        padding: 4px 0;
+        padding-left: 35px;
+      }
+      button {
+        all: unset;
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+        font-size: 15px;
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      margin-left: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+}

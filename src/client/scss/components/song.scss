@@ -1,0 +1,22 @@
+.song-mixin {
+  width: 100%;
+  .song-mixin__thumb {
+    height: 140px;
+    border-radius: 7px;
+    width: 100%;
+    background-color: ivory;
+  }
+  .song-mixin__data {
+    padding: 0px 15px;
+    .song-mixin__title {
+      font-size: 18px;
+      display: block;
+      margin-top: 10px;
+    }
+    .song-mixin__meta,
+    .song-mixin__artist {
+      margin-top: 5px;
+      font-size: 12px;
+    }
+  }
+}

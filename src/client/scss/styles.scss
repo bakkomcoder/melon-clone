@@ -1,14 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+
 // Config
 @import "./config/_variables.scss";
 @import "./config/_reset.scss";
 
 // Components
-
-// Example: @import "./components/message.scss";
+@import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/song.scss";
+@import "./components/nav.scss";
 
 // Screens
-
-// Example: @import "./screens/search.scss";
+@import "./screens/home.scss";
 
 // Defaults
 a {
@@ -18,7 +21,12 @@ a {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Kalam",
+    cursive;
   background-color: $bg;
   color: white;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }

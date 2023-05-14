@@ -1,2 +1,29 @@
 header
-    div
+    div.header__left
+        a(href="/").header-logo
+            span Animusic
+        form(method="GET").search__form
+            button 
+                i.fas.fa-search
+            input(type="text", name="keyword")
+    nav
+        ul
+            if loggedIn
+                li 
+                    a(href="/users/edit") Edit Profile
+                li 
+                    a(href="/users/logout") Log Out 
+                li
+                    a(href=`/users/${loggedInUser._id}`)
+                        if loggedInUser.avatarUrl === ""
+                            span 😀
+                        else 
+                            img.header__avatar(src="/" + loggedInUser.avatarUrl)
+            else
+                li 
+                    a(href="/login") 로그인
+                li 
+                    a(href="/join") 회원가입
+                li 
+                    a(href="/login")
+                        i.fas.fa-user

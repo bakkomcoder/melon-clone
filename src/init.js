@@ -1,6 +1,10 @@
 import "regenerator-runtime";
 import "dotenv/config";
+
 import "./db";
+import "./models/Song";
+import "./models/User";
+import "./models/Playlist";
 import app from "./server";
 
 const PORT = process.env.PORT || 4005;

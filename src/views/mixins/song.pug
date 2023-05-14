@@ -1,5 +1,9 @@
 mixin song(song)
-    a(href=`/songs/${song.id}`)
-        span=song.title
-        div 
-            span #{song.meta.views} views
+    a(href=`/songs/${song.id}`).song-mixin
+        div.song-mixin__thumb
+        div.song-mixin__data
+            span.song-mixin__title=song.songTitle
+            span.song-mixin__artist=song.artist
+            div.song-mixin__meta
+                span #{song.meta.views} views • 
+                span #{song.meta.likes} likes
