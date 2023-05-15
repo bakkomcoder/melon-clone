@@ -12,44 +12,28 @@ export const watch = async (req, res) => {
   return res.render("watch", { pageTitle: "Watch", song });
 };
 
-// export const home = async (req, res) => {
-//   try {
-//     const songsTop10 = await Song.find({}).sort({ "meta.play": "desc" });
-//     return res.render("home", { pageTitle: "HOME", songsTop10 });
-//   } catch (error) {
-//     console.log(error);
-//     return res.send("Error");
-//   }
-// };
-
-// export const home = async (req, res) => {
-//   const songs = await Song.find({}).sort({ "meta.play": "desc" });
-//   return res.render("home", { pageTitle: "Home", songs });
-// };
-
-// export const getEdit = async (req, res) => {
-//   return res.render("edit", { pageTitle: "Edit" });
-// };
-
-// export const postEdit = async (req, res) => {};
-
 export const getUpload = async (req, res) => {
   return res.render("upload", { pageTitle: "Upload" });
 };
 
 export const postUpload = async (req, res) => {
   const { songTitle, artist, youtubeUrl } = req.body;
-  const song = await Song.create({
-    songTitle,
-    artist,
-    meta: {
-      views: 1,
-      rating: 0,
-    },
-  });
-  await song.save();
-  return res.redirect("/");
-  console.log(song);
+  try {
+    await Song.create({
+      songTitle,
+      artist,
+      meta: {
+        views: 1,
+        rating: 0,
+      },
+    });
+    return res.redirect("/");
+  } catch (error) {
+    return res.status(400).render("upload", {
+      pageTitle: "노래 등록",
+      errorMessage: error._message,
+    });
+  }
 };
 
 // export const remove = async (req, res) => {};
